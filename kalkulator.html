@@ -1,0 +1,19 @@
+grep -n "GOLD_PRICE_PER_GRAM\|NISAB_GRAM\|nisabValue\|hartaBersih\|tercapai\|zakat =" /mnt/user-data/outputs/saling-berbagi-zakat.html
+Output
+
+155:.status.tercapai{color:var(--gold-light)}
+465:  const GOLD_PRICE_PER_GRAM = 1850000; // Rp, harga acuan indikatif — perbarui berkala
+466:  const NISAB_GRAM = 85;
+467:  const nisabValue = GOLD_PRICE_PER_GRAM * NISAB_GRAM;
+482:    const hartaBersih = Math.max(0, (kas+emas)-utang);
+483:    const tercapai = hartaBersih >= nisabValue;
+484:    const zakat = tercapai ? hartaBersih*0.025 : 0;
+486:    statusEl.textContent = tercapai ? "Nisab Tercapai (≥ "+idr.format(nisabValue)+")" : "Belum Mencapai Nisab (ambang "+idr.format(nisabValue)+")";
+487:    statusEl.className = "status " + (tercapai ? "tercapai" : "belum");
+489:    ketEl.textContent = tercapai
+490:      ? "Harta bersih "+idr.format(hartaBersih)+" × 2,5% = kewajiban zakat Anda"
+493:    if((kas||emas||utang) && !calcTracked){ track("calculate_zakat_completed", {harta_bersih:hartaBersih, wajib_zakat:zakat}); calcTracked=true; }
+
+
+
+
